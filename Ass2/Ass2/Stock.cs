@@ -8,11 +8,9 @@ using System.Threading.Tasks;
 
 namespace Ass2
 {
-    class Stock
+    class Stock : Product
     {
         public string ID { get; set; }
-        public double Price { get; set; }
-        public int Quantity { get; set; }
 
         public Stock(string iD, double price, int quantity)
         {

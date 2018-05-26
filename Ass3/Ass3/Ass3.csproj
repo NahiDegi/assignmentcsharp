@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4D387AC2-2272-4777-9986-E194B08BD47B}</ProjectGuid>
+    <ProjectGuid>{EA114F3C-8520-4F99-A51E-3D05564E7BF9}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Ass2</RootNamespace>
-    <AssemblyName>Ass2</AssemblyName>
+    <RootNamespace>Ass3</RootNamespace>
+    <AssemblyName>Ass3</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,10 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Portfolio.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Stock.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
