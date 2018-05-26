@@ -21,31 +21,61 @@ namespace Ass1
 
 
             //Q2.
-            foreach (int number in OddNumbers)
-            {
-                Console.Write(number + "\t");
-            }
+            printNumbers(OddNumbers);
 
             Console.WriteLine("");
 
             //Q3.
             Console.Write("Enter the number to be checked for primality : ");
-            if (IsPrime(int.Parse(Console.ReadLine())))
+            if (isPrime(int.Parse(Console.ReadLine())))
             {
-                Console.WriteLine("Number is prime.");
+                Console.WriteLine("Number is prime.\n");
             }
             else
             {
-                Console.WriteLine("Number is not prime.");
+                Console.WriteLine("Number is not prime.\n");
             }
 
+            //Q4.
 
+            List<int> OddPrimeNumbers = new List<int>();
+            List<int> OddNonPrimeNumbers = new List<int>();
 
+            foreach (int number in OddNumbers)
+            {
+                if (isPrime(number))
+                {
+                    OddPrimeNumbers.Add(number);
+                }
+                else
+                {
+                    OddNonPrimeNumbers.Add(number);
+                }
+            }
 
+            //Q5.
+
+            //OddPrime
+
+            Console.Write("Odd Prime NUmbers less than 100 : ");
+            printNumbers(OddPrimeNumbers);
+
+            Console.Write("Odd Non Prime NUmbers less than 100 : ");
+            printNumbers(OddNonPrimeNumbers);
+        }
+
+        private static void printNumbers(List<int> numbers)
+        {
+            foreach (int number in numbers)
+            {
+                Console.Write(number + "\t");
+            }
+
+            Console.WriteLine("\n");
 
         }
 
-        private static bool IsPrime(int v)
+        private static bool isPrime(int v)
         {
             for (int i = 2; i <= Math.Sqrt(v); i++)
             {
