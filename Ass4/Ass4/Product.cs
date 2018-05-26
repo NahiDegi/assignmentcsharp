@@ -24,5 +24,8 @@ namespace Ass4
         {
             return Price * Quantity;
         }
+
+
+
     }
 }

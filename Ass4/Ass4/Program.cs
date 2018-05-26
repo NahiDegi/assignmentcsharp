@@ -22,6 +22,27 @@ namespace Ass4
 
             Console.WriteLine(s1.Equals(s2));
 
+            //4Q4
+            Portfolio portfolio = new Portfolio();
+            Random random = new Random();
+
+            for (int i = 0; i < 5; i++)
+            {
+                portfolio.AddToPortfolio(new Stock("StockID" + i,
+                    random.Next(100, 200),
+                    random.Next(1, 10)));
+            }
+
+            printStocks(portfolio.CollectionOfStocks.ToList().OrderByDescending(a => a.GetNotional()));
+
+        }
+
+        private static void printStocks(IOrderedEnumerable<Product> orderedEnumerable)
+        {
+            foreach (Product product in orderedEnumerable)
+            {
+                Console.WriteLine("ID : {0}, Notional : {1}", product.ID, product.GetNotional());
+            }
         }
     }
 }

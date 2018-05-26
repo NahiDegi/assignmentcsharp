@@ -26,5 +26,17 @@ namespace Ass4
             return "Stock";
         }
 
+        //4Q3
+        public override bool Equals(object obj)
+        {
+            return obj.GetHashCode()==this.GetHashCode();
+        }
+
+        public override int GetHashCode()
+        {
+            string s = ID;
+            return s.GetHashCode();
+        }
+
     }
 }
