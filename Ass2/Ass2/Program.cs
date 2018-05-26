@@ -24,16 +24,53 @@ namespace Ass2
             }
 
             //Testing stocks use ctrl + k,u to uncomment
+            //foreach (Stock stock in portfolio.CollectionOfStocks)
+            //{
+            //    Console.WriteLine(stock.ToString());
+            //}
+
+
+            //Q5,8
+            Console.WriteLine("Total Notional of Portfolio : "+portfolio.GetNotional()+"\n");
+
+            //Q6.
             foreach (Stock stock in portfolio.CollectionOfStocks)
             {
-                Console.WriteLine(stock.ToString());
+                if (stock.GetNotional() > 1000)
+                {
+                    Console.WriteLine("ID : {0}, Notional : {1}", stock.ID, stock.GetNotional());
+                }
             }
+            Console.WriteLine("");
 
+            //Q7.
+            oddSplit(portfolio);
 
-            //Q5
-            Console.WriteLine("Total Notional of Portfolio : "+portfolio.GetNotional());
+        }
 
+        private static void oddSplit(Portfolio portfolio)
+        {
+            for (int i = 0; i < portfolio.CollectionOfStocks.Count; i++)
+            {
+                Stock stock = portfolio.CollectionOfStocks[i];
+                if ((stock.Quantity & 1) == 1)
+                {
+                    Console.WriteLine("Before Split -- ID : {0} , Quantity : {1} , Price : {2}",
+                        stock.ID,
+                        stock.Quantity,
+                        stock.Price);
 
+                    stock.SplitStocks();
+                    portfolio.CollectionOfStocks[i] = stock;
+
+                    Console.WriteLine("After Split -- ID : {0} , Quantity : {1} , Price : {2}",
+                        stock.ID,
+                        stock.Quantity,
+                        stock.Price);
+
+                    Console.WriteLine("");
+                }
+            }
         }
     }
 }
