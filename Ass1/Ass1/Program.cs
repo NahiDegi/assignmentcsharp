@@ -26,8 +26,33 @@ namespace Ass1
                 Console.Write(number + "\t");
             }
 
+            Console.WriteLine("");
+
+            //Q3.
+            Console.Write("Enter the number to be checked for primality : ");
+            if (IsPrime(int.Parse(Console.ReadLine())))
+            {
+                Console.WriteLine("Number is prime.");
+            }
+            else
+            {
+                Console.WriteLine("Number is not prime.");
+            }
 
 
+
+
+
+        }
+
+        private static bool IsPrime(int v)
+        {
+            for (int i = 2; i <= Math.Sqrt(v); i++)
+            {
+                if (v % i == 0)
+                    return false;
+            }
+            return true;
         }
     }
 }
