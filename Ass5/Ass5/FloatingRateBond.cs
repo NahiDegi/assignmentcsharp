@@ -14,5 +14,10 @@ namespace Ass5
         public FloatingRateBond(string iD, double price, int quantity, int years) : base(iD, price, quantity, years, random.Next(1, 10))
         {
         }
+
+        public new double GetCoupon()
+        {
+            return Rate * Quantity;
+        }
     }
 }

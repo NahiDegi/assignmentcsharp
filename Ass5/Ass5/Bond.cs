@@ -20,7 +20,7 @@ namespace Ass5
             Rate = rate;
         }
 
-        public double GetCoupon()
+        public virtual double GetCoupon()
         {
             return Rate * 10;
         }
