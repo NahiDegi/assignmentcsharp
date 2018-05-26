@@ -10,6 +10,24 @@ namespace Ass1
     {
         static void Main(string[] args)
         {
+
+            //Q1.
+
+            List<int> OddNumbers = new List<int>();
+            for(int i = 1; i < 100; i += 2)
+            {
+                OddNumbers.Add(i);
+            }
+
+
+            //Q2.
+            foreach (int number in OddNumbers)
+            {
+                Console.Write(number + "\t");
+            }
+
+
+
         }
     }
 }

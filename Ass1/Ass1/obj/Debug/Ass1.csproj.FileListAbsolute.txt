@@ -1,0 +1,7 @@
+F:\assignmentcsharp\Ass1\Ass1\bin\Debug\Ass1.exe.config
+F:\assignmentcsharp\Ass1\Ass1\bin\Debug\Ass1.exe
+F:\assignmentcsharp\Ass1\Ass1\bin\Debug\Ass1.pdb
+F:\assignmentcsharp\Ass1\Ass1\obj\Debug\Ass1.csprojResolveAssemblyReference.cache
+F:\assignmentcsharp\Ass1\Ass1\obj\Debug\Ass1.csproj.CoreCompileInputs.cache
+F:\assignmentcsharp\Ass1\Ass1\obj\Debug\Ass1.exe
+F:\assignmentcsharp\Ass1\Ass1\obj\Debug\Ass1.pdb
