@@ -19,5 +19,10 @@ namespace Ass3
             Years = years;
             Rate = rate;
         }
+
+        public double GetCoupon()
+        {
+            return Rate * 10;
+        }
     }
 }
