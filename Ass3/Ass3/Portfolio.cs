@@ -11,11 +11,22 @@ namespace Ass3
     class Portfolio
     {
         //3Q5.
-        public event Program.SplitStock SplitStock;
+        public event Program.SplitStock SplitStockEvent;
 
-        public List<Stock> CollectionOfStocks = new List<Stock>();
+        public void Subscribe()
+        {
+            SplitStockEvent += EventHandler;
+        }
+
+        public void EventHandler(string str)
+        {
+            Console.WriteLine(str);
+        }
+
+        //3Q6
+        public List<Product> CollectionOfStocks = new List<Product>();
         
-        public void AddToPortfolio(Stock stock)
+        public void AddToPortfolio(Product stock)
         {
             CollectionOfStocks.Add(stock);
         }
@@ -24,12 +35,17 @@ namespace Ass3
         {
             double total = 0;
 
-            foreach (Stock stock in CollectionOfStocks)
+            foreach (Product stock in CollectionOfStocks)
             {
                 total += stock.GetNotional();
             }
 
             return total;
+        }
+
+        internal void Call(string str)
+        {
+            SplitStockEvent(str);
         }
     }
 }

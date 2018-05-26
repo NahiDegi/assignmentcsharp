@@ -14,7 +14,7 @@ namespace Ass3
         public int Years { get; set; }
         public double Rate { get; set; }
 
-        public Bond(double price, int quantity, int years, double rate) :base(price,quantity)
+        public Bond(string iD,double price, int quantity, int years, double rate) :base(iD,price,quantity)
         {
             Years = years;
             Rate = rate;
@@ -23,6 +23,11 @@ namespace Ass3
         public double GetCoupon()
         {
             return Rate * 10;
+        }
+
+        public override string ToString()
+        {
+            return "Bond";
         }
     }
 }

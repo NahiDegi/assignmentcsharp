@@ -10,17 +10,9 @@ namespace Ass3
     //3Q2.
     class Stock : Product
     {
-        public string ID { get; set; }
-
-        public Stock(string iD, double price, int quantity) : base(price,quantity)
+        public Stock(string iD, double price, int quantity) : base(iD,price,quantity)
         {
-            ID = iD;
             
-        }
-
-        public double GetNotional()
-        {
-            return Price * Quantity;
         }
 
         public void SplitStocks()
@@ -31,7 +23,7 @@ namespace Ass3
 
         public override string ToString()
         {
-            return String.Format("ID : {0}, Price : {1}, Quantity : {2}",ID,Price,Quantity);
+            return "Stock";
         }
 
     }

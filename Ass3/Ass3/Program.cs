@@ -17,65 +17,72 @@ namespace Ass3
             Portfolio portfolio = new Portfolio();
             Random random = new Random();
 
+            //3Q8
+            portfolio.Subscribe();
 
-            //Q4
+
+            //3Q7
             for (int i = 0; i < 5; i++)
             {
-                portfolio.AddToPortfolio(new Stock("ID" + i,
+                portfolio.AddToPortfolio(new Stock("StockID" + i,
                     random.Next(100, 200),
                     random.Next(1, 10)));
             }
 
-            //Testing stocks use ctrl + k,u to uncomment
-            //foreach (Stock stock in portfolio.CollectionOfStocks)
+            for (int i = 0; i < 5; i++)
+            {
+                portfolio.AddToPortfolio(new Bond("BondID" + i,
+                    random.Next(100, 200),
+                    random.Next(1, 10),
+                    random.Next(1,10),
+                    random.Next(1,5)));
+            }
+
+            //Testing products use ctrl + k,u to uncomment
+            //foreach (Product stock in portfolio.CollectionOfStocks)
             //{
             //    Console.WriteLine(stock.ToString());
             //}
 
+            //3Q9
+            Console.WriteLine("Total Notional of Portfolio : " + portfolio.GetNotional() + "\n");
 
-            //Q5,8
-            Console.WriteLine("Total Notional of Portfolio : "+portfolio.GetNotional()+"\n");
-
-            //Q6.
-            foreach (Stock stock in portfolio.CollectionOfStocks)
+            //3Q10
+            foreach (Product product in portfolio.CollectionOfStocks)
             {
-                if (stock.GetNotional() > 1000)
+                if (product.ToString().Equals("Stock"))
                 {
-                    Console.WriteLine("ID : {0}, Notional : {1}", stock.ID, stock.GetNotional());
+                    Console.WriteLine("Stock ID : {0}, Quantity : {1}, Price : {2}", 
+                        product.ID, 
+                        product.Quantity, 
+                        product.Price);
                 }
             }
-            Console.WriteLine("");
-
-            //Q7.
-            oddSplit(portfolio);
 
 
+            //3Q11
+            portfolio.Call("Chill");
 
+            //3Q13
+            foreach (Product product in portfolio.CollectionOfStocks)
+            {
+                if (product.ToString().Equals("Bond"))
+                {
+                    Console.WriteLine("Bond coupon : {0}",((Bond)product).GetCoupon());
+                }
+            }
 
+            //printProduct(portfolio.CollectionOfStocks.ToList());
+
+            //3Q14
+            printProduct(portfolio.CollectionOfStocks.ToList().Where(r => r.GetNotional()>1000));
         }
 
-        private static void oddSplit(Portfolio portfolio)
+        private static void printProduct(IEnumerable<Product> enumerable)
         {
-            for (int i = 0; i < portfolio.CollectionOfStocks.Count; i++)
+            foreach (Product product in enumerable)
             {
-                Stock stock = portfolio.CollectionOfStocks[i];
-                if ((stock.Quantity & 1) == 1)
-                {
-                    Console.WriteLine("Before Split -- ID : {0} , Quantity : {1} , Price : {2}",
-                        stock.ID,
-                        stock.Quantity,
-                        stock.Price);
-
-                    stock.SplitStocks();
-                    portfolio.CollectionOfStocks[i] = stock;
-
-                    Console.WriteLine("After Split -- ID : {0} , Quantity : {1} , Price : {2}",
-                        stock.ID,
-                        stock.Quantity,
-                        stock.Price);
-
-                    Console.WriteLine("");
-                }
+                Console.WriteLine("ID : {0}, Notional : {1}",product.ID,product.GetNotional());
             }
         }
     }
