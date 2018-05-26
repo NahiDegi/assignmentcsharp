@@ -8,6 +8,9 @@ namespace Ass3
 {
     class Program
     {
+        //3Q4.
+        public delegate void SplitStock(string arg);
+
         static void Main(string[] args)
         {
             //Q3
@@ -45,6 +48,9 @@ namespace Ass3
 
             //Q7.
             oddSplit(portfolio);
+
+
+
 
         }
 

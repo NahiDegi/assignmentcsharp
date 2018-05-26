@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-//Q1.
+//3Q1.
 namespace Ass3
 {
-    //Q2.
+    //3Q2.
     class Bond : Product
     {
-        //Q3.
+        //3Q3.
         public int Years { get; set; }
         public double Rate { get; set; }
 

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Ass3
 {
-    //Q2.
+    //3Q2.
     class Stock : Product
     {
         public string ID { get; set; }

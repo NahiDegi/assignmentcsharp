@@ -10,6 +10,9 @@ namespace Ass3
 {
     class Portfolio
     {
+        //3Q5.
+        public event Program.SplitStock SplitStock;
+
         public List<Stock> CollectionOfStocks = new List<Stock>();
         
         public void AddToPortfolio(Stock stock)

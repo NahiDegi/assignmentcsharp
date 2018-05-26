@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-//Q.1
+//3Q.1
 namespace Ass3
 {
     class Product
