@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace Ass3
+namespace Ass4
 {
     //3Q2.
     class Stock : Product

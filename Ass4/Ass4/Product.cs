@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 //3Q.1
-namespace Ass3
+namespace Ass4
 {
     abstract class Product
     {
