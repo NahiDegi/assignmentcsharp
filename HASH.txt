@@ -1,0 +1,86 @@
+/*
+	By Milind Lalwani - BahuMajaNu
+   	NIT - Tiruchirappalli
+
+        “Everyone's a whore, Grace ( Tommy’s true love ).
+            We just sell different parts of ourselves.” 
+                - Thomas Shelby, Peaky Blinders
+
+*/
+#include <bits/stdc++.h>
+#define ll long long
+#define ull unsigned long long
+#define p 1000000007
+#define test int t; cin >> t; while(t--)
+#define For(i,l,n) for(i=l;i<n;i++)
+#define Rof(i,l,n) for(i=l;i>n;i--)
+#define pb push_back
+#define vi vector <int>
+#define mp make_pair
+#define vp vector < pair <int,int> > 
+#define um unordered_map
+#define vb vector <bool>
+#define di deque <int>
+#define dp deque < pair <int,int> >
+//					BFS
+/* 
+vb vis(n+1,true);
+	For(i,1,n+1){
+		if(vis[i]){
+			queue <int> q;
+			q.push(i);
+			int s;
+			while(!q.empty()){
+				s=q.front();
+				q.pop();
+				if(vis[s]){
+					vis[s]=false;		
+					for(auto j:g[s]){
+						if(vis[j])
+							q.push(j);
+					}
+				}
+			}
+		}
+	}
+*/
+using namespace std;
+int i,j,k,l,m,n;
+/*int bs(vi &a,int b){
+	if(b<=a[0])
+    	return -1;
+	if(b>a.back())
+    	return a.size()-1;
+	int s=0,e=a.size(),mid=(s+e)/2;
+	while(s<e){
+    	mid=(s+e)/2;
+    	if(a[mid]<b && a[mid+1]>=b)
+        	return mid;
+    	if(a[mid]<=b)
+        	e=mid;
+    	else
+        	s=mid;
+	}
+	return s;
+}*/
+int main() {
+	std::ios::sync_with_stdio(false) ; cin.tie(NULL);
+    
+    vector <int> f(1e6+1,0);
+	/*
+		OR
+		map <int,int> f;
+	/*
+    cin >> n;
+    for(i=0;i<n;i++){
+        cin >> j;
+        f[j]++;
+    }
+    
+    for(i=0;i<1e6;i++){
+        if(f[i]==1)
+            cout << i << " ";
+    }
+    
+	return 0;
+}
